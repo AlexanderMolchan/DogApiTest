@@ -16,7 +16,6 @@ final class BreedListViewModel {
     var breedsArray: Dynamic<[BreedModel]?> = Dynamic(nil)
     var error: Dynamic<Bool> = Dynamic(false)
     var isActivity: Dynamic<Bool> = Dynamic(false)
-    var updateUrlArray: Dynamic<Bool> = Dynamic(false)
 
     init(provider: NetworkManager) {
         self.provider = provider
