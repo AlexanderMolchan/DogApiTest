@@ -26,6 +26,8 @@ final class MoreInfoViewController: BaseViewController<MoreInfoViewControllerVie
     
     private func request() {
         guard let url = URL(string: viewModel.wikiLink) else { return }
-        contentView.webView.load(URLRequest(url: url))
+        var urlRequest = URLRequest(url: url)
+        urlRequest.cachePolicy = .returnCacheDataElseLoad
+        contentView.webView.load(urlRequest)
     }
 }
