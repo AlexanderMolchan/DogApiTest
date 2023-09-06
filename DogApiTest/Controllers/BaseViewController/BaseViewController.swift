@@ -14,6 +14,6 @@ class BaseViewController<T: UIView>: UIViewController {
     
     override func loadView() {
         super.loadView()
-        self.view = T()
+        self.view = contentView
     }
 }

@@ -52,6 +52,9 @@ final class BreedCollectionCell: UICollectionViewCell {
         contentView.addSubview(cellImage)
         contentView.addSubview(nameLabel)
         contentView.layer.cornerRadius = 10
+        cellImage.layer.cornerRadius = 20
+        cellImage.layer.maskedCorners = .layerMaxXMaxYCorner
+        cellImage.clipsToBounds = true
         contentView.clipsToBounds = true
 
         contentView.backgroundColor = UIColor { traitCollection in
@@ -68,14 +71,15 @@ final class BreedCollectionCell: UICollectionViewCell {
                 case .dark:
                     return .systemOrange
                 default:
-                    return .green
+                    return .black
             }
         }
     }
     
     private func makeConstraints() {        
         cellImage.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(nameLabel.snp.top).offset(-10)
         }
         nameLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(10)

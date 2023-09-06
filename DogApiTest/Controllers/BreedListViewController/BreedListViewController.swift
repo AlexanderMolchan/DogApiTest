@@ -9,7 +9,7 @@ import UIKit
 
 final class BreedListViewController: BaseViewController<BreedListViewControllerView> {
     private let viewModel: BreedListViewModel
-        
+    
     init(viewModel: BreedListViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -21,9 +21,13 @@ final class BreedListViewController: BaseViewController<BreedListViewControllerV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        controllerConfigurate()
+    }
+    
+    private func controllerConfigurate() {
         collectionViewConfigurate()
-        bindElements()
         viewModel.getBreedData()
+        bindElements()
     }
     
     private func collectionViewConfigurate() {

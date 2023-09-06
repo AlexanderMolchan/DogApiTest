@@ -10,7 +10,7 @@ import Foundation
 struct BreedModel: Decodable {
     var name: String
     var id: String
-    var wikiLink: String
+    var wikiLink: String?
     
     enum CodingKeys: String, CodingKey {
         case name = "name"
